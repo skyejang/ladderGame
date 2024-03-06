@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>사다리게임</title>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="import" href="http://www.polymer-project.org/components/paper-ripple/paper-ripple.html">
+    <link rel="stylesheet" type="text/css" href="meterial.css">
+    <link rel="stylesheet" type="text/css" href="font.css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    <script src="jquery-2.1.3.min.js"></script>
+</head>
+<body>
+   <div class="background-wrap">
+      <img src="./img/background_img.png" style="width:100%;"/>
+   </div>
+    <div class="landing" id="landing">
+       <div class="start-form">
+            <div class="landing-form">
+               <div class="group">
+                  <p class="title">사다리 개수 설정</p>
+                  <div class="input-wrap">
+                     <button class="count-btn" id="minus">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M18 12H6"/>
+                         </svg>
+                     </button>
+                     <div class="input-outter">
+                        <input type="number" min="2" max="5" name="member" id="member" value="2" readonly/>
+                     </div>
+                     <button class="count-btn" id="plus">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#FFFFFF" class="w-6 h-6">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
+                         </svg>
+                     </button>
+                  </div>
+                  <div >
+                     <button id="next-button" class="next-btn center">다음
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 36px; margin-left:4px;">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                        </svg>                      
+                     </button>
+                     <paper-ripple fit></paper-ripple>
+                   </div>
+               </div>
+               <div class="destination-wrap" style="display: none;">
+                  <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); min-width: 450px;">
+                     <div class="input-value-wrap"></div>
+                     <div style="display:flex; justify-content: space-between; margin-top: 30px; align-items:center;">
+                        <button  class="next-btn center short" id="prevStep">
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  style="width: 24px; margin-right:4px;">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                           </svg>이전                      
+                        </button>   
+                        <button  class="next-btn center short" id="nextStep">다음
+                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width: 24px; margin-left:4px;">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                           </svg>                      
+                        </button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+       </div>
+    </div>
+    <div class="ladder-outter">
+        <div id="ladder" class="ladder">
+            <div class="dim"></div>
+             <canvas class="ladder_canvas" id="ladder_canvas"></canvas>
+             <div class="images-class" data-index="0" style="width: 150px; height:150px; position: absolute; left: -68px; top:-75px; display: none; z-index: 2;">
+                <img src="./img/horse1.png" style="width: 100%;"/>
+             </div>
+             <div class="images-class" data-index="1" style="width: 150px; height:150px; position: absolute; display: none; left: 292px; top:-75px; z-index: 2;">
+                <img src="./img/horse2.png" style="width: 100%;"/>
+             </div>
+             <div class="images-class" data-index="2" style="width: 150px; height:150px; position: absolute; left: 652px; top:-75px; display: none; z-index: 2;">
+              <img src="./img/horse3.png" style="width: 100%;"/>
+           </div>
+           <div class="images-class" data-index="3" style="width: 150px; height:150px; position: absolute; display: none; left: 1012px; top:-75px; z-index: 2;">
+              <img src="./img/horse4.png" style="width: 100%;"/>
+           </div>
+           <div class="images-class" data-index="4" style="width: 150px; height:150px; position: absolute; left: 1372px; top:-75px; display: none; z-index: 2;">
+            <img src="./img/horse5.png" style="width: 100%;"/>
+         </div>
+         <div id="result-outter" class="result-outter">
+            <div class="background-wrap">
+               <img src="./img/background_img.png" style="width:100%;"/>
+            </div>
+            <div id="result" class="result"></div>
+         </div>
+        </div>
+    </div>
+    <div style="margin-top: 50px; text-align: center;">
+        <button style="display: none;" id="start_btn">
+          START
+          <paper-ripple fit></paper-ripple>
+        </button>
+      </div>
+<script src="ladder_new2.js"></script>
+</body>
+</html>
